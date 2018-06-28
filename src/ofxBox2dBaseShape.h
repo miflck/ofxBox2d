@@ -28,6 +28,7 @@ public:
 	//----------------------------------------
     static bool shouldRemove(shared_ptr<ofxBox2dBaseShape> shape);
     static bool shouldRemoveOffScreen(shared_ptr<ofxBox2dBaseShape> shape);
+
 	bool isFixed();
 	bool isSleeping();
     
@@ -67,6 +68,8 @@ public:
 	virtual void setRotationFriction(float f);
 	float getRotation();
 	void setRotation(float angle);
+    virtual void setAngularVelocity(float a);
+
 	
 	//------------------------------------------------ 
 	virtual void setPosition(float x, float y);

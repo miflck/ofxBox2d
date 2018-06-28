@@ -55,6 +55,8 @@ bool ofxBox2dBaseShape::shouldRemoveOffScreen(shared_ptr<ofxBox2dBaseShape> shap
     return !ofRectangle(0, 0, ofGetWidth(), ofGetHeight()).inside(shape.get()->getPosition());
 }
 
+
+
 //----------------------------------------
 bool ofxBox2dBaseShape::isBody() {
 	if (body == NULL) {
@@ -176,6 +178,13 @@ float ofxBox2dBaseShape::getRotation() {
 
 void ofxBox2dBaseShape::setRotation(float angle){
     body->SetTransform(body->GetWorldCenter(), DEG_TO_RAD * angle);
+}
+
+
+void ofxBox2dBaseShape::setAngularVelocity(float a) {
+    if(body != NULL) {
+        body->SetAngularVelocity(a);
+    }
 }
 
 
